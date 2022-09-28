@@ -5,11 +5,12 @@ const { logger } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const cookieParser = require('cookie-parser') //Rest API is going to need to be able to parse cookies. we use cookies in the app.
 const cors = require("cors"); //Cors needs to be applied for origins can request resources from our API
+const corsOptions = require('./config/corsOptions.js')
 const PORT = process.env.PORT || 3500
 
 app.use(logger)
 
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.use(express.json())
 
