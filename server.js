@@ -1,3 +1,4 @@
+require('dotenv').config() 
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -7,6 +8,8 @@ const cookieParser = require('cookie-parser') //Rest API is going to need to be 
 const cors = require("cors"); //Cors needs to be applied for origins can request resources from our API
 const corsOptions = require('./config/corsOptions.js')
 const PORT = process.env.PORT || 3500
+
+console.log(process.env.NODE_ENV)
 
 app.use(logger)
 
